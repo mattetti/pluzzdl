@@ -1,0 +1,191 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BINDIR	Makefile	/^BINDIR ?= $(PREFIX)\/bin$/;"	m
+BOLD_SEQ	src/ColorFormatter.py	/^	BOLD_SEQ = "\\033[1m"$/;"	v	class:ColorFormatter
+BeautifulSoup	src/PluzzDL.py	/^import BeautifulSoup$/;"	i
+COLORS	src/ColorFormatter.py	/^	COLORS = {$/;"	v	class:ColorFormatter
+COLOR_SEQ	src/ColorFormatter.py	/^	COLOR_SEQ = "\\033[1;%dm"$/;"	v	class:ColorFormatter
+ColorFormatter	src/ColorFormatter.py	/^class ColorFormatter( logging.Formatter ):$/;"	c
+ColorFormatter	src/main.py	/^from ColorFormatter import ColorFormatter$/;"	i
+ConfigParser	src/Configuration.py	/^import ConfigParser$/;"	i
+Configuration	src/Configuration.py	/^class Configuration( object ):$/;"	c
+Configuration	src/PluzzDL.py	/^from Configuration import Configuration$/;"	i
+DATADIR	Makefile	/^DATADIR ?= $(PREFIX)\/share$/;"	m
+ElementTree	src/PluzzDL.py	/^import xml.etree.ElementTree$/;"	i
+FORMAT	src/ColorFormatter.py	/^	FORMAT = ( "[%(levelname)-19s]  " "$BOLD%(filename)-20s$RESET" "%(message)s" )$/;"	v	class:ColorFormatter
+GeneralProxyError	src/socks.py	/^class GeneralProxyError(ProxyError):$/;"	c
+HTTPError	src/socks.py	/^class HTTPError(ProxyError):$/;"	c
+Historique	src/Historique.py	/^class Historique( object ):$/;"	c
+Historique	src/PluzzDL.py	/^from Historique    import Historique, Video$/;"	i
+INSTALL	Makefile	/^INSTALL = install -m 755$/;"	m
+M3U8_LINK	src/PluzzDL.py	/^	M3U8_LINK = "http:\/\/medias2.francetv.fr\/catchup-mobile\/france-dom-tom\/non-token\/non-drm\/m3u8\/_FILE_NAME_.m3u8"$/;"	v	class:PluzzDL
+Navigateur	src/Navigateur.py	/^class Navigateur:$/;"	c
+Navigateur	src/PluzzDL.py	/^from Navigateur    import Navigateur$/;"	i
+PLUZZDL_REPERTOIRE	Makefile	/^PLUZZDL_REPERTOIRE = pluzzdl-$(PLUZZDL_VERSION)$/;"	m
+PLUZZDL_VERSION	Makefile	/^PLUZZDL_VERSION = $(shell grep '__version__ = ".*"' src\/main.py | cut -d '"' -f 2)$/;"	m
+PREFIX	Makefile	/^PREFIX ?= \/usr$/;"	m
+PROXY_TYPE_HTTP	src/socks.py	/^PROXY_TYPE_HTTP = 3$/;"	v
+PROXY_TYPE_SOCKS4	src/socks.py	/^PROXY_TYPE_SOCKS4 = 1$/;"	v
+PROXY_TYPE_SOCKS5	src/socks.py	/^PROXY_TYPE_SOCKS5 = 2$/;"	v
+PYTHON_VERSION	Makefile	/^PYTHON_VERSION ?= python$/;"	m
+PluzzDL	src/PluzzDL.py	/^class PluzzDL( object ):$/;"	c
+PluzzDL	src/main.py	/^from PluzzDL        import PluzzDL$/;"	i
+PluzzDLException	src/PluzzDL.py	/^class PluzzDLException( Exception ):$/;"	c
+PluzzDLF4M	src/PluzzDL.py	/^class PluzzDLF4M( object ):$/;"	c
+PluzzDLInfosHandler	src/PluzzDL.py	/^class PluzzDLInfosHandler( xml.sax.handler.ContentHandler ):$/;"	c
+PluzzDLM3U8	src/PluzzDL.py	/^class PluzzDLM3U8( object ):$/;"	c
+PluzzDLMMS	src/PluzzDL.py	/^class PluzzDLMMS( object ):$/;"	c
+PluzzDLRTMP	src/PluzzDL.py	/^class PluzzDLRTMP( object ):$/;"	c
+ProxyError	src/socks.py	/^class ProxyError(Exception):$/;"	c
+REGEX_M3U8	src/PluzzDL.py	/^	REGEX_M3U8 = "\/([0-9]{4}\/S[0-9]{2}\/J[0-9]{1}\/[0-9]*-[0-9]{6,8})-"$/;"	v	class:PluzzDL
+RESET_SEQ	src/ColorFormatter.py	/^	RESET_SEQ = "\\033[0m"$/;"	v	class:ColorFormatter
+Socks4Error	src/socks.py	/^class Socks4Error(ProxyError):$/;"	c
+Socks5AuthError	src/socks.py	/^class Socks5AuthError(ProxyError):$/;"	c
+Socks5Error	src/socks.py	/^class Socks5Error(ProxyError):$/;"	c
+StringIO	src/PluzzDL.py	/^import StringIO$/;"	i
+Video	src/Historique.py	/^class Video( object ):$/;"	c
+Video	src/PluzzDL.py	/^from Historique    import Historique, Video$/;"	i
+__author__	src/main.py	/^__author__ = "Chaoswizard"$/;"	v
+__del__	src/Historique.py	/^	def __del__( self ):$/;"	m	class:Historique	file:
+__eq__	src/Historique.py	/^	def __eq__( self, other ):$/;"	m	class:Video	file:
+__getitem__	src/Configuration.py	/^	def __getitem__( self, key ):$/;"	m	class:Configuration	file:
+__init__	src/ColorFormatter.py	/^	def __init__( self, use_color ):$/;"	m	class:ColorFormatter
+__init__	src/Configuration.py	/^	def __init__( self ):$/;"	m	class:Configuration
+__init__	src/Historique.py	/^	def __init__( self ):$/;"	m	class:Historique
+__init__	src/Historique.py	/^	def __init__( self, lien, fragments, finie, date = datetime.datetime.now() ):$/;"	m	class:Video
+__init__	src/Navigateur.py	/^	def __init__( self, proxy = None, proxySock = False ):$/;"	m	class:Navigateur
+__init__	src/PluzzDL.py	/^	def __init__( self, lienMMS ):$/;"	m	class:PluzzDLMMS
+__init__	src/PluzzDL.py	/^	def __init__( self, lienRTMP ):$/;"	m	class:PluzzDLRTMP
+__init__	src/PluzzDL.py	/^	def __init__( self, m3u8URL, nomFichier, navigateur, stopDownloadEvent, progressFnct ):$/;"	m	class:PluzzDLM3U8
+__init__	src/PluzzDL.py	/^	def __init__( self, manifestURL, nomFichier, navigateur, stopDownloadEvent, progressFnct ):$/;"	m	class:PluzzDLF4M
+__init__	src/PluzzDL.py	/^	def __init__( self, pluzzdl ):$/;"	m	class:PluzzDLInfosHandler
+__init__	src/PluzzDL.py	/^	def __init__( self,$/;"	m	class:PluzzDL
+__init__	src/socks.py	/^	def __init__(self, family=socket.AF_INET, type=socket.SOCK_STREAM, proto=0, _sock=None):$/;"	m	class:socksocket
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:GeneralProxyError
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:HTTPError
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:ProxyError
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:Socks4Error
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:Socks5AuthError
+__init__	src/socks.py	/^	def __init__(self, value):$/;"	m	class:Socks5Error
+__license__	src/main.py	/^__license__ = "GPL 2"$/;"	v
+__ne__	src/Historique.py	/^	def __ne__( self, other ):$/;"	m	class:Video	file:
+__negotiatehttp	src/socks.py	/^	def __negotiatehttp(self,destaddr,destport):$/;"	m	class:socksocket	file:
+__negotiatesocks4	src/socks.py	/^	def __negotiatesocks4(self,destaddr,destport):$/;"	m	class:socksocket	file:
+__negotiatesocks5	src/socks.py	/^	def __negotiatesocks5(self,destaddr,destport):$/;"	m	class:socksocket	file:
+__recvall	src/socks.py	/^	def __recvall(self, bytes):$/;"	m	class:socksocket	file:
+__setitem__	src/Configuration.py	/^	def __setitem__( self, key, value ):$/;"	m	class:Configuration	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:GeneralProxyError	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:HTTPError	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:ProxyError	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:Socks4Error	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:Socks5AuthError	file:
+__str__	src/socks.py	/^	def __str__(self):$/;"	m	class:Socks5Error	file:
+__url__	src/main.py	/^__url__ = "http:\/\/code.google.com\/p\/tvdownloader\/"$/;"	v
+__version__	src/main.py	/^__version__ = "0.9.4"$/;"	v
+_defaultproxy	src/socks.py	/^_defaultproxy = None$/;"	v
+_generalerrors	src/socks.py	/^_generalerrors = ("success",$/;"	v
+_orgsocket	src/socks.py	/^_orgsocket = socket.socket$/;"	v
+_socks4errors	src/socks.py	/^_socks4errors = ("request granted",$/;"	v
+_socks5autherrors	src/socks.py	/^_socks5autherrors = ("succeeded",$/;"	v
+_socks5errors	src/socks.py	/^_socks5errors = ("succeeded",$/;"	v
+adobePlayer	src/PluzzDL.py	/^	adobePlayer = "http:\/\/fpdownload.adobe.com\/strobe\/FlashMediaPlayback_101.swf"$/;"	v	class:PluzzDLF4M
+ajouter	src/Historique.py	/^	def ajouter( self, video ):$/;"	m	class:Historique
+appendCookie	src/Navigateur.py	/^	def appendCookie( self, cookieName, cookieValue ):$/;"	m	class:Navigateur
+argparse	src/main.py	/^import argparse$/;"	i
+args	src/main.py	/^	args = parser.parse_args()$/;"	v
+base64	src/PluzzDL.py	/^import base64$/;"	i
+binascii	src/PluzzDL.py	/^import binascii$/;"	i
+characters	src/PluzzDL.py	/^	def characters( self, data ):$/;"	m	class:PluzzDLInfosHandler
+charger	src/Historique.py	/^	def charger( self ):$/;"	m	class:Historique
+connect	src/socks.py	/^	def connect(self,destpair):$/;"	m	class:socksocket
+console	src/main.py	/^	console = logging.StreamHandler( sys.stdout )$/;"	v
+cookielib	src/Navigateur.py	/^import cookielib$/;"	i
+creerMKV	src/PluzzDL.py	/^	def creerMKV( self ):$/;"	m	class:PluzzDLM3U8
+datetime	src/Historique.py	/^import datetime$/;"	i
+datetime	src/PluzzDL.py	/^import datetime$/;"	i
+debutVideo	src/PluzzDL.py	/^	def debutVideo( self, fragID, fragData ):$/;"	m	class:PluzzDLF4M
+decompressSWF	src/PluzzDL.py	/^	def decompressSWF( self, swfData ):$/;"	m	class:PluzzDLF4M
+endElement	src/PluzzDL.py	/^	def endElement( self, name ):$/;"	m	class:PluzzDLInfosHandler
+etree	src/PluzzDL.py	/^import xml.etree.ElementTree$/;"	i
+format	src/ColorFormatter.py	/^	def format( self, record ):$/;"	m	class:ColorFormatter
+formatter_msg	src/ColorFormatter.py	/^	def formatter_msg( self, msg ):$/;"	m	class:ColorFormatter
+getFichier	src/Navigateur.py	/^	def getFichier( self, url, referer = None ):$/;"	m	class:Navigateur
+getId	src/PluzzDL.py	/^	def getId( self, url ):$/;"	m	class:PluzzDL
+getNomFichier	src/PluzzDL.py	/^	def getNomFichier( self, repertoire, codeProgramme, timeStamp, extension ):$/;"	m	class:PluzzDL
+getPlayerHash	src/PluzzDL.py	/^	def getPlayerHash( self ):$/;"	m	class:PluzzDLF4M
+getVideo	src/Historique.py	/^	def getVideo( self, lienVideo ):$/;"	m	class:Historique
+getpeername	src/socks.py	/^	def getpeername(self):$/;"	m	class:socksocket
+getproxypeername	src/socks.py	/^	def getproxypeername(self):$/;"	m	class:socksocket
+getproxysockname	src/socks.py	/^	def getproxysockname(self):$/;"	m	class:socksocket
+hashlib	src/PluzzDL.py	/^import hashlib$/;"	i
+hmac	src/PluzzDL.py	/^import hmac$/;"	i
+listeUserAgents	src/Navigateur.py	/^	listeUserAgents = [ 'Mozilla\/5.0 (Macintosh; U; Intel Mac OS X 10_5_5; fr-fr) AppleWebKit\/525.18 (KHTML, like Gecko) Version\/3.1.2 Safari\/525.20.1',$/;"	v	class:Navigateur
+logger	src/Configuration.py	/^logger = logging.getLogger( "pluzzdl" )$/;"	v
+logger	src/Historique.py	/^logger = logging.getLogger( "pluzzdl" )$/;"	v
+logger	src/Navigateur.py	/^logger = logging.getLogger( "pluzzdl" )$/;"	v
+logger	src/PluzzDL.py	/^logger = logging.getLogger( "pluzzdl" )$/;"	v
+logger	src/main.py	/^	logger = logging.getLogger( "pluzzdl" )$/;"	v
+logging	src/ColorFormatter.py	/^import logging$/;"	i
+logging	src/Configuration.py	/^import logging$/;"	i
+logging	src/Historique.py	/^import logging$/;"	i
+logging	src/Navigateur.py	/^import logging$/;"	i
+logging	src/PluzzDL.py	/^import logging$/;"	i
+logging	src/main.py	/^import logging$/;"	i
+nettoyer	src/Historique.py	/^	def nettoyer( self ):$/;"	m	class:Historique
+os	src/Configuration.py	/^import os$/;"	i
+os	src/Historique.py	/^import os$/;"	i
+os	src/PluzzDL.py	/^import os$/;"	i
+ouvrirNouvelleVideo	src/PluzzDL.py	/^	def ouvrirNouvelleVideo( self ):$/;"	m	class:PluzzDLF4M
+ouvrirNouvelleVideo	src/PluzzDL.py	/^	def ouvrirNouvelleVideo( self ):$/;"	m	class:PluzzDLM3U8
+ouvrirVideoExistante	src/PluzzDL.py	/^	def ouvrirVideoExistante( self ):$/;"	m	class:PluzzDLF4M
+ouvrirVideoExistante	src/PluzzDL.py	/^	def ouvrirVideoExistante( self ):$/;"	m	class:PluzzDLM3U8
+parseInfos	src/PluzzDL.py	/^	def parseInfos( self, pageInfos ):$/;"	m	class:PluzzDL
+parseManifest	src/PluzzDL.py	/^	def parseManifest( self ):$/;"	m	class:PluzzDLF4M
+parser	src/main.py	/^	parser = argparse.ArgumentParser( usage = usage, description = "Télécharge les émissions de Pluzz" )$/;"	v
+pickle	src/Historique.py	/^import cPickle as pickle$/;"	i
+platform	src/main.py	/^import platform$/;"	i
+progressFnct	src/main.py	/^			 progressFnct = progressFnct )$/;"	v
+progressFnct	src/main.py	/^		progressFnct = lambda x : None$/;"	v
+progressFnct	src/main.py	/^		progressFnct = lambda x : logger.info( "Avancement : %3d %%" % ( x ) )$/;"	v
+proxy	src/main.py	/^			 proxy = args.proxy,$/;"	v
+proxySock	src/main.py	/^			 proxySock = args.sock,$/;"	v
+random	src/Navigateur.py	/^import random$/;"	i
+re	src/PluzzDL.py	/^import re$/;"	i
+re	src/main.py	/^import re$/;"	i
+readConfig	src/Configuration.py	/^	def readConfig( self ):$/;"	m	class:Configuration
+resourcePath	src/Configuration.py	/^def resourcePath( relative ):$/;"	f
+sauver	src/Historique.py	/^	def sauver( self ):$/;"	m	class:Historique
+sax	src/PluzzDL.py	/^import xml.sax$/;"	i
+setdefaultproxy	src/socks.py	/^def setdefaultproxy(proxytype=None,addr=None,port=None,rdns=True,username=None,password=None):$/;"	f
+setproxy	src/socks.py	/^	def setproxy(self,proxytype=None,addr=None,port=None,rdns=True,username=None,password=None):$/;"	m	class:socksocket
+shutil	src/Configuration.py	/^import shutil$/;"	i
+socket	src/Navigateur.py	/^import socket$/;"	i
+socket	src/socks.py	/^import socket$/;"	i
+socks	src/Navigateur.py	/^import socks$/;"	i
+socksocket	src/socks.py	/^class socksocket(socket.socket):$/;"	c
+sousTitres	src/main.py	/^			 sousTitres = args.soustitres,$/;"	v
+startElement	src/PluzzDL.py	/^	def startElement( self, name, attrs ):$/;"	m	class:PluzzDLInfosHandler
+struct	src/PluzzDL.py	/^import struct$/;"	i
+struct	src/socks.py	/^import struct$/;"	i
+sys	src/Configuration.py	/^import sys$/;"	i
+sys	src/main.py	/^import sys$/;"	i
+telecharger	src/PluzzDL.py	/^	def telecharger( self ):$/;"	m	class:PluzzDLF4M
+telecharger	src/PluzzDL.py	/^	def telecharger( self ):$/;"	m	class:PluzzDLM3U8
+telecharger	src/PluzzDL.py	/^	def telecharger( self ):$/;"	m	class:PluzzDLMMS
+telecharger	src/PluzzDL.py	/^	def telecharger( self ):$/;"	m	class:PluzzDLRTMP
+telechargerSousTitres	src/PluzzDL.py	/^	def telechargerSousTitres( self, idEmission, nomChaine, nomVideo ):$/;"	m	class:PluzzDL
+threading	src/PluzzDL.py	/^import threading$/;"	i
+time	src/PluzzDL.py	/^import time$/;"	i
+timeOut	src/Navigateur.py	/^	timeOut = 60$/;"	v	class:Navigateur
+urllib	src/PluzzDL.py	/^import urllib$/;"	i
+urllib2	src/Navigateur.py	/^import urllib2$/;"	i
+urllib2	src/PluzzDL.py	/^import urllib2$/;"	i
+usage	src/main.py	/^	usage = "pluzzdl [options] urlEmission"$/;"	v
+writeConfig	src/Configuration.py	/^	def writeConfig( self ):$/;"	m	class:Configuration
+xml	src/PluzzDL.py	/^import xml.etree.ElementTree$/;"	i
+xml	src/PluzzDL.py	/^import xml.sax$/;"	i
+zlib	src/PluzzDL.py	/^import zlib$/;"	i

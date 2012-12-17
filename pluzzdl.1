@@ -1,0 +1,80 @@
+.TH pluzzdl 1 "23 novembre 2012" "0.9.4" "pluzzdl man page"
+
+
+.SH NOM
+\fBpluzzdl\fR \- télécharger les émissions de France Télévision
+
+
+.SH UTILISATION
+.HP 1
+\fBpluzzdl [ -bvt ] [ -p \fIproxy\fB [ -s ] ] \fIurlEmission\fR\fR
+.PP
+où \fIurlEmission\fR doit être de la forme :
+.TP
+http://www.pluzz.fr/VIDEO.html
+vidéos du site Pluzz
+.TP
+http://pluzz.francetv.fr/videos/VIDEO.html
+vidéos du site Pluzz (nouvelle version)
+
+
+.SH OPTIONS
+.PP
+Les options suivantes sont disponibles :
+.TP
+\fB\-b\fr
+Affiche le pourcentage de progression du téléchargement
+.TP
+\fB\-v\fr
+Mode verbeux (à utiliser pour obtenir des informations de debugage)
+.TP
+\fB\-t\fr
+Récupère le fichier de sous-titres de la vidéo (s'il est disponible)
+.TP
+\fB\-p \fIproxy\fB\fr
+Permet d'utiliser un proxy HTTP au format http://URL:PORT ou, si utilisé avec l'option \fB\-s\fR, d'utiliser un proxy SOCKS5 au format ADRESSE:PORT
+.TP
+\fB\-s\fr
+Si un proxy est fourni avec l'option \fB\-p\fR, il est utilisé comme un proxy SOCKS5. Le proxy doit être au format ADRESSE:PORT.
+.TP
+\fB\-\-nocolor\fr
+Désactive la couleur dans le terminal (particulièrement utile si le terminal ne supporte pas la couleur)
+.TP
+\fB\-\-version\fr
+Affiche la version actuelle de \fBpluzzdl\fR
+
+
+.SH EXEMPLE
+La plupart de téléchargements se feront avec les options suivantes
+.TP
+\fBpluzzdl\fR \fB-bt\fr \fIurlEmission\fR
+La vidéo sera donc chargée en affichant la progression du téléchargement et en chargant les sous-titres.
+
+
+.SH BUGS
+Les vidéos comportant des DRMs ou les vidéos utilisant un manifest de type media-secure ne sont pas téléchargeables.
+
+
+.SH DEPENDANCES
+.TP
+Python 2
+.TP
+PyCrypto
+.TP
+Beautiful Soup (python-beautifulsoup)
+.TP
+SocksiPy (python-socksipy)
+.TP
+FFmpeg
+
+
+.SH INFOS
+Plus d'informations sont disponibles sur :
+.TP
+http://code.google.com/p/tvdownloader/
+Le site officiel de l'application
+.TP
+http://forum.ubuntu-fr.org/viewtopic.php?id=409313
+La discussion sur le forum Ubuntu-fr
+.SH AUTEUR
+Chaoswizard (chaoswizard@gmail.com)
