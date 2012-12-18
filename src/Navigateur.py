@@ -51,7 +51,7 @@ class Navigateur:
 
 	def getFichier( self, url, referer = None ):
 		try:
-			logger.info( "GET %s" % ( url ) )
+			#logger.info( "GET %s" % ( url ) )
 			logger.debug( "GET %s" % ( url ) )
 			requete = urllib2.Request( url )
 			if( referer is not None ):

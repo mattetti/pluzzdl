@@ -247,7 +247,7 @@ class PluzzDLM3U8( object ):
 		"""
 		Creer un mkv a partir de la video existante (cree l'en-tete de la video)
 		"""
-		logger.info( "Création du fichier MKV (vidéo finale) %s ; veuillez attendre quelques instants" % ( self.nomFichier ) )
+		logger.info( "Création du fichier MKV (vidéo finale); veuillez attendre quelques instants" )
 		try:
 			if( os.name == "nt" ):
 				commande = "ffmpeg.exe -i %s -vcodec copy -acodec copy %s 1>NUL 2>NUL" % ( self.nomFichier, self.nomFichierFinal )
