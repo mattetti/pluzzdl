@@ -118,7 +118,6 @@ class PluzzDL( object ):
 		"""
 		#try :
 		page = self.navigateur.getFichier( url )
-		logger.info( page )
 		idEmission = re.findall( self.REGEX_ID, page )[ 0 ]
 		logger.debug( "ID de l'émission : %s" % ( idEmission ) )
 		return idEmission
