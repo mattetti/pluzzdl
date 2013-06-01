@@ -131,8 +131,11 @@ class PluzzDL( object ):
 		try :
 			xml.sax.parseString( pageInfos, PluzzDLInfosHandler( self ) )
 			# Si le lien m3u8 n'existe pas, il faut essayer de creer celui de la plateforme mobile
-			if( self.m3u8URL is None ):
-				self.m3u8URL = self.M3U8_LINK.replace( "_FILE_NAME_", re.findall( self.REGEX_M3U8, pageInfos )[ 0 ] )
+			#if( self.m3u8URL is None ):
+				#logger.debug( "m3u8URL file missing, trying to guess it" )
+				#if( self.manifestURL is not None ):
+					#self.m3u8URL = self.manifestURL.replace( "manifest.f4m", "index_2_av.m3u8" )
+				#self.m3u8URL = self.M3U8_LINK.replace( "_FILE_NAME_", re.findall( self.REGEX_M3U8, pageInfos )[ 0 ] )
 			logger.debug( "URL m3u8 : %s" % ( self.m3u8URL ) )
 			logger.debug( "URL manifest : %s" % ( self.manifestURL ) )
 			logger.debug( "Lien RTMP : %s" % ( self.lienRTMP ) )
