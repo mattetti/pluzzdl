@@ -2,9 +2,9 @@
 # -*- coding:Utf-8 -*-
 
 # Notes :
-#    -> Filtre Wireshark :
-#          http.host contains "ftvodhdsecz" or http.host contains "francetv" or http.host contains "pluzz"
-#    ->
+#	 -> Filtre Wireshark :
+#		   http.host contains "ftvodhdsecz" or http.host contains "francetv" or http.host contains "pluzz"
+#	 ->
 
 #
 # Modules
@@ -51,13 +51,13 @@ class PluzzDL( object ):
 	REGEX_M3U8 = "/([0-9]{4}/S[0-9]{2}/J[0-9]{1}/[0-9]*-[0-9]{6,8})-"
 
 	def __init__( self,
-				  url,  # URL de la video
+				  url,	# URL de la video
 				  proxy = None,  # Proxy a utiliser
 				  proxySock = False,  # Indique si le proxy est de type SOCK
 				  sousTitres = False,  # Telechargement des sous-titres ?
 				  progressFnct = lambda x : None,  # Callback pour la progression du telechargement
 				  stopDownloadEvent = threading.Event(),  # Event pour arreter un telechargement
-				  outDir = "."  # Repertoire de sortie de la video telechargee
+				  outDir = "."	# Repertoire de sortie de la video telechargee
 				):
 		# Classe pour telecharger des fichiers
 		self.navigateur = Navigateur( proxy, proxySock )
@@ -131,10 +131,11 @@ class PluzzDL( object ):
 		try :
 			xml.sax.parseString( pageInfos, PluzzDLInfosHandler( self ) )
 			# Si le lien m3u8 n'existe pas, il faut essayer de creer celui de la plateforme mobile
-			#if( self.m3u8URL is None ):
-				#logger.debug( "m3u8URL file missing, trying to guess it" )
-				#if( self.manifestURL is not None ):
-					#self.m3u8URL = self.manifestURL.replace( "manifest.f4m", "index_2_av.m3u8" )
+			if( self.m3u8URL is None ):
+				logger.debug( "m3u8URL file missing, we will try to guess it" )
+				if( self.manifestURL is not None ):
+					self.m3u8URL = self.manifestURL.replace( "manifest.f4m", "index_2_av.m3u8" )
+					self.m3u8URL = self.m3u8URL.replace( "/z/", "/i/" )
 				#self.m3u8URL = self.M3U8_LINK.replace( "_FILE_NAME_", re.findall( self.REGEX_M3U8, pageInfos )[ 0 ] )
 			logger.debug( "URL m3u8 : %s" % ( self.m3u8URL ) )
 			logger.debug( "URL manifest : %s" % ( self.manifestURL ) )
@@ -233,7 +234,7 @@ class PluzzDLM3U8( object ):
 		except :
 			raise PluzzDLException( "Impossible d'écrire dans le répertoire %s" % ( os.getcwd() ) )
 		# Ajout de l'en-tête
-		# 	Fait dans creerMKV
+		#	Fait dans creerMKV
 
 	def ouvrirVideoExistante( self ):
 		"""
@@ -266,23 +267,14 @@ class PluzzDLM3U8( object ):
 	def telecharger( self ):
 		# Recupere le fichier master.m3u8
 		self.m3u8 = self.navigateur.getFichier( self.m3u8URL )
-		# Extrait l'URL de base pour tous les fragments
-		self.urlBase = "/".join( self.m3u8URL.split( "/" )[ :-1 ] )
-		# Recupere le lien avec le plus gros bitrate
-		try:
-			self.listeFragmentsURL = "%s/%s" % ( self.urlBase, re.findall( ".+?\.m3u8.*", self.m3u8 )[ -1 ] )
-		except:
-			raise PluzzDLException( "Impossible de trouver le lien vers la liste des fragments" )
-		# Recupere la liste des fragments
-		self.listeFragmentsPage = self.navigateur.getFichier( self.listeFragmentsURL )
 		# Extrait l'URL de tous les fragments
-		self.listeFragments = re.findall( ".+?\.ts", self.listeFragmentsPage )
+		self.listeFragments = re.findall( ".+?\.ts", self.m3u8 )
 		#
 		# Creation de la video
 		#
 		self.premierFragment = 1
 		self.telechargementFini = False
-		video = self.historique.getVideo( self.listeFragmentsURL )
+		video = self.historique.getVideo( self.m3u8URL )
 		# Si la video est dans l'historique
 		if( video is not None ):
 			# Si la video existe sur le disque
@@ -309,7 +301,7 @@ class PluzzDLM3U8( object ):
 		try :
 			i = self.premierFragment
 			while( i <= self.nbFragMax and not self.stopDownloadEvent.isSet() ):
-				frag = self.navigateur.getFichier( "%s/%s" % ( self.urlBase, self.listeFragments[ i - 1 ] ) )
+				frag = self.navigateur.getFichier( "%s" % ( self.listeFragments[ i - 1 ] ) )
 				self.fichierVideo.write( frag )
 				# Affichage de la progression
 				self.progressFnct( min( int( ( i / self.nbFragMax ) * 100 ), 100 ) )
@@ -321,11 +313,11 @@ class PluzzDLM3U8( object ):
 				self.creerMKV()
 		except KeyboardInterrupt:
 			logger.info( "Interruption clavier" )
-		except:
-			logger.critical( "Erreur inconnue" )
+		except Exception as inst:
+			logger.critical( "Erreur inconnue %s" % inst )
 		finally :
 			# Ajout dans l'historique
-			self.historique.ajouter( Video( lien = self.listeFragmentsURL, fragments = i, finie = self.telechargementFini ) )
+			self.historique.ajouter( Video( lien = self.m3u8URL, fragments = i, finie = self.telechargementFini ) )
 			# Fermeture du fichier
 			self.fichierVideo.close()
 
@@ -399,8 +391,8 @@ class PluzzDLF4M( object ):
 		Decompresse un fichier swf
 		"""
 		# Adapted from :
-		#    Prozacgod
-		#    http://www.python-forum.org/pythonforum/viewtopic.php?f=2&t=14693
+		#	 Prozacgod
+		#	 http://www.python-forum.org/pythonforum/viewtopic.php?f=2&t=14693
 		if( type( swfData ) is str ):
 			swfData = StringIO.StringIO( swfData )
 
@@ -490,7 +482,7 @@ class PluzzDLF4M( object ):
 			i = self.premierFragment
 			self.navigateur.appendCookie( "hdntl", self.hdntl )
 			while( not self.stopDownloadEvent.isSet() ):
-				# frag  = self.navigateur.getFichier( "%s%d?%s&%s&%s" %( self.urlFrag, i, self.pvtoken, self.hdntl, self.hdnea ) )
+				# frag	= self.navigateur.getFichier( "%s%d?%s&%s&%s" %( self.urlFrag, i, self.pvtoken, self.hdntl, self.hdnea ) )
 				frag = self.navigateur.getFichier( "%s%d" % ( self.urlFrag, i ), referer = self.adobePlayer )
 				debut = self.debutVideo( i, frag )
 				self.fichierVideo.write( frag[ debut : ] )
